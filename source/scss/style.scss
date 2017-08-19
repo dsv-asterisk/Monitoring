@@ -20,6 +20,7 @@ body{
 // ----------------------- /
 .alerta-noscript{
     margin-top: 1em;
+    margin-bottom: 2em;
 }
 
 // ----------------------- \
@@ -37,29 +38,36 @@ body{
 .footer{
     font-size: 1em;
 }
-@mixin footer_pos{
 
+@mixin footer_desktop{
+    display: inline-block;
+    margin: 0;
+    padding: 0 1em;
+    width: 49%;
+}
+
+@mixin footer_mobile{
+    display: inline;
+    background-color: yellow;
+    width: 100%;
 }
 
 .footer__copy{
-    display: inline-block;
-    margin: 0;
-    padding: 0 1em;
-    width: 49%;    
+    @include footer_desktop;
 }
 
 .footer__devel{
-    display: inline-block;
-    margin: 0;
-    padding: 0 1em;
-    width: 50%;    
+    @include footer_desktop;
     text-align: right;
 }
 
-@media(min-heigth:477px){
-    .footer__devel{
-        background-color: yellow;
+@media(max-width:477px){
+    .footer__copy{
+        @include footer_mobile;
     }
+    .footer__devel{
+        @include footer_mobile;
+    }    
 }
 
 // ----------------------- \
