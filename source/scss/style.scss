@@ -1,0 +1,78 @@
+// ----------------------- \
+//  BOOTSTRAP
+// ----------------------- /
+@import "bootstrap.min.scss";
+
+// ----------------------- \
+//  LAYOUT
+// ----------------------- /
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+body{
+    margin: 1em;
+}
+
+// ----------------------- \
+//  BLOCK - Noscript
+// ----------------------- /
+.alerta-noscript{
+    margin-top: 1em;
+}
+
+// ----------------------- \
+//  BLOCK - Logo
+// ----------------------- /
+.logo__posicao{
+    display: block;
+    margin: auto;
+    padding: 1em;
+}
+
+// ----------------------- \
+//  BLOCK - Footer
+// ----------------------- /
+.footer{
+    font-size: 1em;
+}
+@mixin footer_pos{
+
+}
+
+.footer__copy{
+    display: inline-block;
+    margin: 0;
+    padding: 0 1em;
+    width: 49%;    
+}
+
+.footer__devel{
+    display: inline-block;
+    margin: 0;
+    padding: 0 1em;
+    width: 50%;    
+    text-align: right;
+}
+
+@media(min-heigth:477px){
+    .footer__devel{
+        background-color: yellow;
+    }
+}
+
+// ----------------------- \
+//  PADRAO TESTES
+// ----------------------- /
+.test{
+    background-color: yellow;
+}
+
+.test1{
+    background-color: red;
+}
+
+.test2{
+    background-color: blue;
+}

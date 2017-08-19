@@ -1,0 +1,27 @@
+{
+  "name": "dongle",
+  "version": "1.0.0",
+  "description": "Painel Gerenciador de Dongles-Asterisk",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://servicepress@bitbucket.org/servicepress/css_dongle.git"
+  },
+  "keywords": [
+    "dongle",
+    "asterisk"
+  ],
+  "author": "Israel Azevedo",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/servicepress/css_dongle#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-sass": "^3.1.0",
+    "php2html": "^0.2.4"
+  }
+}
