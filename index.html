@@ -28,20 +28,215 @@
     </div>
 </noscript>
 
-<div class="barra-status">
-    <h2>Status GSM</h2>
+<div class="container">
+
+    <div class="borda">
+        <div class="barra-status">
+            Status GSM
+        </div>    
+    </div>
+
+    <div class="borda  central">
+<!-- ------------------------------------- -->
+
+<div class="container  container-dongle">
+    <div class="row">
+        <div class="col col-12 col-sm-6 col-md-6 col-lg-3  detalhes-dongle">
+            <h6>VIVO01</h6><hr class="detalhes-dongle__hr">
+            <p><small> <strong>Grupo: </strong>0</small></p>
+            <p><small> <strong>Provedor: </strong> Vivo</small></p>
+        </div>
+        <div class="col col-12 col-sm-6 col-md-6 col-lg-3  detalhes-dongle  detalhes-dongle__estado-sinal">
+            <p><small> <strong>Estado: </strong> </small><span class="badge badge-success">Livre</span></p>
+            <p><small> <strong>Sinal: </strong> </small><span class="badge badge-warning">27%</span></p>
+        </div>        
+        <div class="col col-12 col-sm-6 col-md-6 col-lg-2  detalhes-dongle  detalhes-dongle__ligacao">
+            <hr class="detalhes-dongle__hr">
+            <p><small> <strong>Ligação Ativa: </strong> 01:10:20</small></p>
+        </div>        
+        <div class="col col-12 col-sm-6 col-md-6 col-lg-2  detalhes-dongle  detalhes-dongle__ligacao">
+            <p><small> <strong>Tempo Total: </strong> 00:00:00</small></p>
+            <hr class="detalhes-dongle__hr">
+        </div>
+        <div class="col col-12 col-lg-2  detalhes-dongle--botoes">
+            <div class="detalhes-dongle__acoes-botoes" role="group">
+                <button type="button" class="btn btn-success">Operar em <strong>2G</strong></button>
+                <button type="button" class="btn btn-primary">Operar em <strong>3G</strong></button>
+            
+                <div class="btn-group  detalhes-dongle__acoes-reiniciar" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle  detalhes-dongle__acoes-reiniciar  detalhes-dongle__acoes-reiniciar--desktop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <strong>Reiniciar</strong>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <a class="dropdown-item" href="#">Reiniciar Dongle</a>
+                    <a class="dropdown-item" href="#">Reiniciar Tempo</a>
+                </div>
+                </div>
+            </div>        
+        </div>
+    </div>
 </div>
 
-<div class="central">
-    <h1>.</h1>
-</div>
 
-<div class="footer">
-    <hr></hr>
-    <div class="footer__copy">&copy; <a href="#" target="_blank">AzCall</a> 2016</div>
-    <div class="footer__devel">Desenvolvido por: <a target="_blank" href="#">AzTell</a></div>
-</div>
 
+
+<table class="table table-striped table-bordered table-hover" style="display:none;">
+    <tbody>
+        <tr>
+            <th>Modem</th>
+            <th>Grupo</th>
+            <th>Estado</th>
+            <th>Sinal</th>
+            <th>Provedor</th>
+            <th>Tempo de Ligação</th>
+            <th>Tempo Total de Chamada</th>
+            <th>Ação</th>
+        </tr>
+<tr><td>VIVO01</td><td>0</td><td><span class="label-default label">Não registrado</span></td><td>0%</td><td></td><td><center>00:00:00</center></td><td><center>00:00:00</center></td><td><div class="center">
+<button type="submit" class="btn btn-default btn-xs noty" data-toggle="tooltip" title="Zerar Tempo de chamada" id="VIVO01" onclick="tempo(this);">
+                       <i class="glyphicon glyphicon-time"></i> Reiniciar Tempo
+                    </button>
+<button type="submit" data-toggle="tooltip" title="Reiniciar modem" class="btn btn-danger btn-xs noty" disabled=""><i class="glyphicon glyphicon-refresh icon-white"></i> Reiniciar
+                    </button>
+<button type="submit" class="btn btn-success btn-xs noty" disabled=""><i class="glyphicon glyphicon-signal icon-green"></i> 2G
+                    </button>
+<button type="submit" class="btn btn-info btn-xs noty" disabled=""><i class="glyphicon glyphicon-signal icon-blue"></i> 3G
+                    </button>
+
+</div></td></tr>
+
+<tr><td>VIVO02</td><td>0</td><td><span class="label-success label label-default">Livre</span></td><td><i class="glyphicon glyphicon-signal blue">   73%</i></td><td><center>Vivo</center></td><td><center>00:00:00</center></td><td><center>00:00:00</center></td><td><div class="center">
+<button type="submit" class="btn btn-default btn-xs noty" data-toggle="tooltip" title="Zerar Tempo de chamada" id="VIVO02" onclick="tempo(this);">
+                       <i class="glyphicon glyphicon-time"></i> Reiniciar Tempo
+                    </button>
+<!-- //////////////////////// -->
+<!--    Modens disponiveis    -->
+<button type="submit" class="btn btn-danger btn-xs noty" data-toggle="tooltip" title="Reiniciar modem" id="VIVO02" onclick="restart(this);" data-noty-options="{&quot;text&quot;:&quot;This is an alert&quot;,&quot;layout&quot;:&quot;bottom&quot;,&quot;type&quot;:&quot;alert&quot;,&quot;closeButton&quot;:&quot;true&quot;}">                        <i class="glyphicon glyphicon-refresh icon-white"></i> Reiniciar
+                    </button>
+
+<!--    Modens em ligação    -->
+<button type="submit" data-toggle="tooltip" title="Fixar em frequência em 2g" class="btn btn-success btn-xs noty" id="VIVO02" onclick="mudagsm(this);"><i class="glyphicon glyphicon-signal icon-green"></i> 2G
+                    </button>
+<button type="submit" data-toggle="tooltip" title="Fixar em frequência em 3g" class="btn btn-info btn-xs noty" id="VIVO02" onclick="mudawcdma(this);">
+<i class="glyphicon glyphicon-signal icon-blue"></i> 3G
+                    </button>
+
+<!-- //////////////////////// -->
+<!-- //////////////////////// -->
+
+</div></td></tr>
+<tr><td>VIVO03</td><td>0</td><td><span class="label-success label label-default">Livre</span></td><td><i class="glyphicon glyphicon-signal red">   17%</i></td><td><center>Vivo</center></td><td><center>00:00:00</center></td><td><center>00:00:00</center></td><td><div class="center">
+<button type="submit" class="btn btn-default btn-xs noty" data-toggle="tooltip" title="Zerar Tempo de chamada" id="VIVO03" onclick="tempo(this);">
+                       <i class="glyphicon glyphicon-time"></i> Reiniciar Tempo
+                    </button>
+<!-- //////////////////////// -->
+<!--    Modens disponiveis    -->
+<button type="submit" class="btn btn-danger btn-xs noty" data-toggle="tooltip" title="Reiniciar modem" id="VIVO03" onclick="restart(this);" data-noty-options="{&quot;text&quot;:&quot;This is an alert&quot;,&quot;layout&quot;:&quot;bottom&quot;,&quot;type&quot;:&quot;alert&quot;,&quot;closeButton&quot;:&quot;true&quot;}">                        <i class="glyphicon glyphicon-refresh icon-white"></i> Reiniciar
+                    </button>
+
+<!--    Modens em ligação    -->
+<button type="submit" data-toggle="tooltip" title="Fixar em frequência em 2g" class="btn btn-success btn-xs noty" id="VIVO03" onclick="mudagsm(this);"><i class="glyphicon glyphicon-signal icon-green"></i> 2G
+                    </button>
+<button type="submit" data-toggle="tooltip" title="Fixar em frequência em 3g" class="btn btn-info btn-xs noty" id="VIVO03" onclick="mudawcdma(this);">
+<i class="glyphicon glyphicon-signal icon-blue"></i> 3G
+                    </button>
+
+<!-- //////////////////////// -->
+<!-- //////////////////////// -->
+
+</div></td></tr>
+<tr><td>VIVO04</td><td>0</td><td><span class="label-success label label-default">Livre</span></td><td><i class="glyphicon glyphicon-signal blue">   73%</i></td><td><center>Vivo</center></td><td><center>00:00:00</center></td><td><center>00:00:00</center></td><td><div class="center">
+<button type="submit" class="btn btn-default btn-xs noty" data-toggle="tooltip" title="Zerar Tempo de chamada" id="VIVO04" onclick="tempo(this);">
+                       <i class="glyphicon glyphicon-time"></i> Reiniciar Tempo
+                    </button>
+<!-- //////////////////////// -->
+<!--    Modens disponiveis    -->
+<button type="submit" class="btn btn-danger btn-xs noty" data-toggle="tooltip" title="Reiniciar modem" id="VIVO04" onclick="restart(this);" data-noty-options="{&quot;text&quot;:&quot;This is an alert&quot;,&quot;layout&quot;:&quot;bottom&quot;,&quot;type&quot;:&quot;alert&quot;,&quot;closeButton&quot;:&quot;true&quot;}">                        <i class="glyphicon glyphicon-refresh icon-white"></i> Reiniciar
+                    </button>
+
+<!--    Modens em ligação    -->
+<button type="submit" data-toggle="tooltip" title="Fixar em frequência em 2g" class="btn btn-success btn-xs noty" id="VIVO04" onclick="mudagsm(this);"><i class="glyphicon glyphicon-signal icon-green"></i> 2G
+                    </button>
+<button type="submit" data-toggle="tooltip" title="Fixar em frequência em 3g" class="btn btn-info btn-xs noty" id="VIVO04" onclick="mudawcdma(this);">
+<i class="glyphicon glyphicon-signal icon-blue"></i> 3G
+                    </button>
+
+<!-- //////////////////////// -->
+<!-- //////////////////////// -->
+
+</div></td></tr>
+<tr><td>VIVO05</td><td>0</td><td><span class="label-success label label-default">Livre</span></td><td><i class="glyphicon glyphicon-signal blue">   73%</i></td><td><center>Vivo</center></td><td><center>00:00:00</center></td><td><center>00:00:00</center></td><td><div class="center">
+<button type="submit" class="btn btn-default btn-xs noty" data-toggle="tooltip" title="Zerar Tempo de chamada" id="VIVO05" onclick="tempo(this);">
+                       <i class="glyphicon glyphicon-time"></i> Reiniciar Tempo
+                    </button>
+<!-- //////////////////////// -->
+<!--    Modens disponiveis    -->
+<button type="submit" class="btn btn-danger btn-xs noty" data-toggle="tooltip" title="Reiniciar modem" id="VIVO05" onclick="restart(this);" data-noty-options="{&quot;text&quot;:&quot;This is an alert&quot;,&quot;layout&quot;:&quot;bottom&quot;,&quot;type&quot;:&quot;alert&quot;,&quot;closeButton&quot;:&quot;true&quot;}">                        <i class="glyphicon glyphicon-refresh icon-white"></i> Reiniciar
+                    </button>
+
+<!--    Modens em ligação    -->
+<button type="submit" data-toggle="tooltip" title="Fixar em frequência em 2g" class="btn btn-success btn-xs noty" id="VIVO05" onclick="mudagsm(this);"><i class="glyphicon glyphicon-signal icon-green"></i> 2G
+                    </button>
+<button type="submit" data-toggle="tooltip" title="Fixar em frequência em 3g" class="btn btn-info btn-xs noty" id="VIVO05" onclick="mudawcdma(this);">
+<i class="glyphicon glyphicon-signal icon-blue"></i> 3G
+                    </button>
+
+<!-- //////////////////////// -->
+<!-- //////////////////////// -->
+
+</div></td></tr>
+<tr><td>VIVO06</td><td>0</td><td><span class="label-success label label-default">Livre</span></td><td><i class="glyphicon glyphicon-signal blue">   73%</i></td><td><center>Vivo</center></td><td><center>00:00:00</center></td><td><center>00:00:00</center></td><td><div class="center">
+<button type="submit" class="btn btn-default btn-xs noty" data-toggle="tooltip" title="Zerar Tempo de chamada" id="VIVO06" onclick="tempo(this);">
+                       <i class="glyphicon glyphicon-time"></i> Reiniciar Tempo
+                    </button>
+<!-- //////////////////////// -->
+<!--    Modens disponiveis    -->
+<button type="submit" class="btn btn-danger btn-xs noty" data-toggle="tooltip" title="Reiniciar modem" id="VIVO06" onclick="restart(this);" data-noty-options="{&quot;text&quot;:&quot;This is an alert&quot;,&quot;layout&quot;:&quot;bottom&quot;,&quot;type&quot;:&quot;alert&quot;,&quot;closeButton&quot;:&quot;true&quot;}">                        <i class="glyphicon glyphicon-refresh icon-white"></i> Reiniciar
+                    </button>
+
+<!--    Modens em ligação    -->
+<button type="submit" data-toggle="tooltip" title="Fixar em frequência em 2g" class="btn btn-success btn-xs noty" id="VIVO06" onclick="mudagsm(this);"><i class="glyphicon glyphicon-signal icon-green"></i> 2G
+                    </button>
+<button type="submit" data-toggle="tooltip" title="Fixar em frequência em 3g" class="btn btn-info btn-xs noty" id="VIVO06" onclick="mudawcdma(this);">
+<i class="glyphicon glyphicon-signal icon-blue"></i> 3G
+                    </button>
+
+<!-- //////////////////////// -->
+<!-- //////////////////////// -->
+
+</div></td></tr>
+<tr><td>VIVO07</td><td>0</td><td><span class="label-success label label-default">Livre</span></td><td><i class="glyphicon glyphicon-signal blue">   73%</i></td><td><center>Vivo</center></td><td><center>00:00:00</center></td><td><center>00:00:00</center></td><td><div class="center">
+<button type="submit" class="btn btn-default btn-xs noty" data-toggle="tooltip" title="Zerar Tempo de chamada" id="VIVO07" onclick="tempo(this);">
+                       <i class="glyphicon glyphicon-time"></i> Reiniciar Tempo
+                    </button>
+<!-- //////////////////////// -->
+<!--    Modens disponiveis    -->
+<button type="submit" class="btn btn-danger btn-xs noty" data-toggle="tooltip" title="Reiniciar modem" id="VIVO07" onclick="restart(this);" data-noty-options="{&quot;text&quot;:&quot;This is an alert&quot;,&quot;layout&quot;:&quot;bottom&quot;,&quot;type&quot;:&quot;alert&quot;,&quot;closeButton&quot;:&quot;true&quot;}">                        <i class="glyphicon glyphicon-refresh icon-white"></i> Reiniciar
+                    </button>
+
+<!--    Modens em ligação    -->
+<button type="submit" data-toggle="tooltip" title="Fixar em frequência em 2g" class="btn btn-success btn-xs noty" id="VIVO07" onclick="mudagsm(this);"><i class="glyphicon glyphicon-signal icon-green"></i> 2G
+                    </button>
+<button type="submit" data-toggle="tooltip" title="Fixar em frequência em 3g" class="btn btn-info btn-xs noty" id="VIVO07" onclick="mudawcdma(this);">
+<i class="glyphicon glyphicon-signal icon-blue"></i> 3G
+                    </button>
+
+<!-- //////////////////////// -->
+<!-- //////////////////////// -->
+
+</div></td></tr>
+</tbody></table>
+    
+<!-- ------------------------------------- -->
+
+    </div>
+
+    <div class="footer">
+        <hr></hr>
+        <div class="footer__copy">&copy; <a href="#" target="_blank">AzCall</a> 2016</div>
+        <div class="footer__devel">Desenvolvido por <a target="_blank" href="#">AzTell</a></div>
+    </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>

@@ -45,12 +45,12 @@ $DIR = __DIR__;
 
 </style>
 <script type="text/javascript" src="jquery.min.js"></script>
-<!--<script type="text/javascript" src="servidores.js"></script>-->
+<!--<script type="text/javascript" src="servidores.js"></script> -->
 <script>
 $(document).ready(function(){
         setInterval(function(){
                 $("#results").load('devices.php')
-    }, 1000);
+    }, 10000);
 });
 </script>
 

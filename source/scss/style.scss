@@ -15,6 +15,21 @@ body{
     margin: 1em;
 }
 
+.borda{
+    border: 1px solid #ccc;
+}
+
+.container-dongle{
+    border: 1px solid #ccc;
+    margin-bottom: 1em;
+    padding-bottom: 0.1em;    
+}
+
+.border-danger{
+    border: 1px solid #ccc;    
+    border-width: 2px;
+}
+
 // ----------------------- \
 //  BLOCK - Noscript
 // ----------------------- /
@@ -29,7 +44,100 @@ body{
 .logo__posicao{
     display: block;
     margin: auto;
-    padding: 1em;
+    padding: 2em;
+}
+
+// ----------------------- \
+//  BLOCK - Label Status
+// ----------------------- /
+.barra-status{
+    border-bottom: none;;
+    padding-left: 1em;
+
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+
+    background-color: #455a64;    
+}
+
+// ----------------------- \
+//  BLOCK - Central
+// ----------------------- /
+.detalhes-dongle{
+    margin-top: 0.5em;    
+}
+
+.detalhes-dongle > hr{
+    margin: 0.3em;
+}
+
+.detalhes-dongle > h6{
+    margin: 0;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.detalhes-dongle > p{
+    margin: 0;
+}
+
+.detalhes-dongle__acoes-botoes > button{
+    width: 100%;
+}
+
+.detalhes-dongle__acoes-reiniciar{
+    width: 100%;
+}
+
+@media(min-width:576px){
+    .detalhes-dongle__hr{
+        display: none;
+    }
+
+    .detalhes-dongle > h6{
+        font-size: 1.8em;
+    }    
+
+    .detalhes-dongle__estado-sinal{
+        margin-top: 2.4em;
+    }
+
+    .detalhes-dongle__acoes{
+        margin-top: 1em;
+    }
+
+    .detalhes-dongle__acoes-botoes > button {
+        float: left;     
+        width: 30%;   
+    }    
+
+    .detalhes-dongle__acoes-reiniciar{
+        width: 40%;
+
+        .detalhes-dongle__acoes-reiniciar--desktop{
+            width: 100%;
+        }
+    }
+}
+
+@media(min-width:992px){
+    .detalhes-dongle__ligacao{
+        margin-top: 2.4em;
+    }
+
+    .detalhes-dongle--botoes{
+        padding: 0.1em;
+
+        .detalhes-dongle__acoes-botoes > button{
+            width: 100%;
+        }
+        .detalhes-dongle__acoes-reiniciar{
+            width: 100%;
+        }
+    }
 }
 
 // ----------------------- \
@@ -47,9 +155,10 @@ body{
 }
 
 @mixin footer_mobile{
-    display: inline;
-    background-color: yellow;
+    display: block;
     width: 100%;
+
+    font-size: 0.7em;
 }
 
 .footer__copy{
@@ -67,20 +176,6 @@ body{
     }
     .footer__devel{
         @include footer_mobile;
+        text-align: left;
     }    
-}
-
-// ----------------------- \
-//  PADRAO TESTES
-// ----------------------- /
-.test{
-    background-color: yellow;
-}
-
-.test1{
-    background-color: red;
-}
-
-.test2{
-    background-color: blue;
 }
