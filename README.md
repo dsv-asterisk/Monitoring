@@ -30,56 +30,49 @@
   - Pasta Source
 
 #### CASO DEBIAN 8 ou CENTOS NO DIRETÓRIO #####
-$ cd /var/www/html/
-
-$ tar -xvf master.zip
-
-entre no diretório modens
+- $ cd /var/www/html/
+- $ tar -xvf master.zip
 
 ##### DEBIAN 7 
-$ cd /var/www/dongle
+- $ cd /var/www/dongle
 
 ##### DEBIAN 8
-$ cd /var/www/html/dongle
+- $ cd /var/www/html/dongle
 
 ##### CentOS
-$ cd /var/www/html/dongle
+- $ cd /var/www/html/dongle
 
 #### INSTALANDO SUDO ####
 ##### Debian / Ubuntu
-$ apt-get install sudo
+- $ apt-get install sudo
 
 ##### CentOS
-$ yum install sudo
+- $ yum install sudo
 
 #### EDITE SUDOERS ####
-Edite o arquivo /etc/sudoers colocando os seguintes parametros na linha abaixo da permissão de ROOT:
+- Edite o arquivo /etc/sudoers colocando os seguintes parametros na linha abaixo da permissão de ROOT:
+  - www-data ALL = NOPASSWD : /var/spool/asterisk/outgoing
+  - www-data ALL=NOPASSWD:ALL
 
-www-data ALL = NOPASSWD : /var/spool/asterisk/outgoing
-www-data ALL=NOPASSWD:ALL
+- Crie um usuario para o manager do Asterisk com o seguintes parametros
+  - PERMISSÕES AMI
+    - read = system,call,log,verbose,command,agent,user,config,command,dtmf,reporting,cdr,dialplan,originate,all
+    - write = system,call,log,verbose,command,agent,user,config,command,dtmf,reporting,cdr,dialplan,originate,all
 
-Crie um usuario para o manager do Asterisk com o seguintes parametros
-
-PERMISSÕES AMI
-
-read = system,call,log,verbose,command,agent,user,config,command,dtmf,reporting,cdr,dialplan,originate,all
-write = system,call,log,verbose,command,agent,user,config,command,dtmf,reporting,cdr,dialplan,originate,all
-
-TIMEOUT DE ESCRITA
-
-writetimeout = 5000
+  - TIMEOUT DE ESCRITA
+    - writetimeout = 5000
 
 #### CONFIGURANDO O ACESSO ####
-E adicione as credenciais no arquivo "config.php "
+- Adicione as credenciais no arquivo "config.php "
 
 #### Finalizando ####
-Dê permissão de root para o diretorio modens para que possa executar todas as funções.
+- Dê permissão de root para o diretorio modens para que possa executar todas as funções.
 
 ##### Debian 7
-$ chmod -R 0777 /var/www/dongle
+- $ chmod -R 0777 /var/www/dongle
 
 ##### Debian 8 ou CentOS
-$ chmod -R 0777 /var/www/html/dongle
+- $ chmod -R 0777 /var/www/html/dongle
 
 #### ACESSO ####
 ##### http://IP_do_seu_servidor/dongle/
