@@ -3,10 +3,8 @@ const sass 		= require("gulp-sass");
 const notify 	= require("gulp-notify");
 const connect	= require("gulp-connect");
 const uglifycss = require('gulp-uglifycss');
-const javascriptObfuscator = require('gulp-javascript-obfuscator');
 const recursiveConcat = require('gulp-recursive-concat');
 const cleanCSS = require('gulp-clean-css');
-//const php2html	= require("php2html"); //https://www.npmjs.com/package/php2html
 
 //*-----------------------*\
 // Monitorar estes arquivos
@@ -33,7 +31,6 @@ gulp.task("sass", function(){
 gulp.task('js', function(){
 	return gulp.src('source/**/*.js')
 	.pipe(recursiveConcat({extname: ".min.js", outside: true}))
-	.pipe(javascriptObfuscator())
 	.pipe(gulp.dest('js/'));
 });
 
@@ -60,7 +57,12 @@ gulp.task("sass:watch", function(){
 	gulp.watch(arquivos, ['monitorando']);
 });
 
+gulp.task("js:watch", function(){
+	gulp.watch("./source/**/*.js", ['js']);
+	gulp.watch(arquivos, ['monitorando']);
+});
+
 //*-----------------------*\
 // DEFAULT.
 //*-----------------------*/
-gulp.task("default",['sass', 'js', 'connect','sass:watch']);
+gulp.task("default",['sass', 'js', 'connect','sass:watch','js:watch']);
