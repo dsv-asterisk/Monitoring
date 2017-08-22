@@ -1,29 +1,73 @@
-# Gerenciador de Dongle - Asterisk #
+# dongle
+painel de monitoramento chan_dongle
 
-Painel gerenciador de dongles instalados no asterisk
 
-### What is this repository for? ###
+##                PAINEL DE MONITORAMENTO DONGLE                     ##
+                                               Por:Israel Azevedo  
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
-### How do I get set up? ###
+Instalação simples do serviço de monitoramento, basta mover para o
+diretório /var/www/ descompactar o arquivo modens.tar dentro do www
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+# CASO DEBIAN 8 ou CENTOS NO DIRETÓRIO #
 
-### Contribution guidelines ###
+/var/www/html/
 
-* Writing tests
-* Code review
-* Other guidelines
+tar -xvf dongle.tar
 
-### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
+entre no diretório modens
+
+# DEBIAN 7
+cd /var/www/dongle
+
+# DEBIAN 8
+cd /var/www/html/dongle
+
+# CentOS
+
+cd /var/www/html/dongle
+
+# INSTALANDO SUDO
+Instale o sudo:
+# Debian / Ubuntu
+apt-get install sudo
+
+# CentOS
+ yum install sudo
+
+# EDITE
+Edite o arquivo /etc/sudoers colocando os seguintes parametros na linha abaixo da permissão de ROOT:
+
+www-data ALL = NOPASSWD : /var/spool/asterisk/outgoing
+www-data ALL=NOPASSWD:ALL
+
+Crie um usuario para o manager do Asterisk com o seguintes parametros
+
+PERMISSÕES AMI
+
+read = system,call,log,verbose,command,agent,user,config,command,dtmf,reporting,cdr,dialplan,originate,all
+write = system,call,log,verbose,command,agent,user,config,command,dtmf,reporting,cdr,dialplan,originate,all
+
+TIMEOUT DE ESCRITA
+
+writetimeout = 5000
+
+# CONFIGURANDO O ACESSO
+E adicione as credenciais no arquivo " config.php "
+
+
+Por fim, Dê permissão de root para o diretorio modens para que possa executar todas as funções.
+
+# Debian 7
+chmod -R 0777 /var/www/dongle
+
+# Debian 8 ou CentOS
+chmod -R 0777 /var/www/html/dongle
+
+
+# FIM
+
+Pronto! Só rodar no Browser.
+
+# http://IP_do_seu_servidor/dongle/
