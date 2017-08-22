@@ -36,20 +36,20 @@ $ tar -xvf master.zip
 
 entre no diretório modens
 
-# DEBIAN 7
+##### DEBIAN 7 
 $ cd /var/www/dongle
 
-# DEBIAN 8
+##### DEBIAN 8
 $ cd /var/www/html/dongle
 
-# CentOS
+##### CentOS
 $ cd /var/www/html/dongle
 
 #### INSTALANDO SUDO ####
-# Debian / Ubuntu
+##### Debian / Ubuntu
 $ apt-get install sudo
 
-# CentOS
+##### CentOS
 $ yum install sudo
 
 #### EDITE SUDOERS ####
@@ -75,10 +75,10 @@ E adicione as credenciais no arquivo "config.php "
 #### Finalizando ####
 Dê permissão de root para o diretorio modens para que possa executar todas as funções.
 
-# Debian 7
+##### Debian 7
 $ chmod -R 0777 /var/www/dongle
 
-# Debian 8 ou CentOS
+##### Debian 8 ou CentOS
 $ chmod -R 0777 /var/www/html/dongle
 
 #### ACESSO ####
