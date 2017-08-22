@@ -2,6 +2,10 @@ const gulp 		= require("gulp");
 const sass 		= require("gulp-sass");
 const notify 	= require("gulp-notify");
 const connect	= require("gulp-connect");
+const uglifycss = require('gulp-uglifycss');
+const javascriptObfuscator = require('gulp-javascript-obfuscator');
+const recursiveConcat = require('gulp-recursive-concat');
+const cleanCSS = require('gulp-clean-css');
 //const php2html	= require("php2html"); //https://www.npmjs.com/package/php2html
 
 //*-----------------------*\
@@ -15,7 +19,22 @@ var arquivos = ['index.html','css/style.css'];
 gulp.task("sass", function(){
 	return gulp.src(['./source/scss/style.scss'])
 				.pipe(sass()).on("error", notify.onError({title:"Erro ao compilar", message:"<%= error.message %>"}))
+				.pipe(cleanCSS({compatibility: 'ie8'}))								
+				.pipe(uglifycss({
+					"maxLineLen": 80,
+					"uglyComments": true
+				  }))				
 				.pipe(gulp.dest("./css"))
+});
+
+//*-----------------------*\
+// Processa o JS
+//*-----------------------*/
+gulp.task('js', function(){
+	return gulp.src('source/**/*.js')
+	.pipe(recursiveConcat({extname: ".min.js", outside: true}))
+	.pipe(javascriptObfuscator())
+	.pipe(gulp.dest('js/'));
 });
 
 //*-----------------------*\
@@ -44,4 +63,4 @@ gulp.task("sass:watch", function(){
 //*-----------------------*\
 // DEFAULT.
 //*-----------------------*/
-gulp.task("default",['sass', 'connect','sass:watch']);
+gulp.task("default",['sass', 'js', 'connect','sass:watch']);
