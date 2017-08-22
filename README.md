@@ -1,42 +1,58 @@
-# dongle
-painel de monitoramento chan_dongle
 
-
-##                PAINEL DE MONITORAMENTO DONGLE                     ##
+#                PAINEL DE MONITORAMENTO DONGLE                     #
                                                Por:Israel Azevedo  
 
 
-Instalação simples do serviço de monitoramento, basta mover para o
-diretório /var/www/ descompactar o arquivo modens.tar dentro do www
+### Descrição: ###
+- Painel de Monitoramento de Dongles.
 
-# CASO DEBIAN 8 ou CENTOS NO DIRETÓRIO #
+### Colaborador(es): ###
+- [Renato Siqueira](https://github.com/RenatoSiqueira)
 
-/var/www/html/
+### Instalação ###
+- Descompactar o arquivo .zip dentro do diretório /var/www/ 
 
-tar -xvf dongle.tar
+### Detalhamento ###
+- Pasta CSS: Contém o css pré-concatenado-compilado e semi-minificado.
+- Pasta Fonts: Contém os arquivos do font-awesome
+- Pasta Img: Contém o logo da empresa
+- Pasta JS: Contém o js pré-concatenado-compilado e semi-minificado.
+- Pasta Original: Contém o arquivo original desenvolvido pelo Israel
+- Pasta Resource: Contém os arquivos originais do font-awesome
+- Pasta Source: 
+  - JS: Contém todos os arquivos originais utilizados.
+  - SCSS: Contém todos os arquivos originais utilizados.
 
+### Arquivos de Produção ###
+- Para uso em produção, os seguintes poderão ser apagados:
+  - Pasta Original
+  - Pasta Resource
+  - Pasta Source
+
+#### CASO DEBIAN 8 ou CENTOS NO DIRETÓRIO #####
+$ cd /var/www/html/
+
+$ tar -xvf master.zip
 
 entre no diretório modens
 
 # DEBIAN 7
-cd /var/www/dongle
+$ cd /var/www/dongle
 
 # DEBIAN 8
-cd /var/www/html/dongle
+$ cd /var/www/html/dongle
 
 # CentOS
+$ cd /var/www/html/dongle
 
-cd /var/www/html/dongle
-
-# INSTALANDO SUDO
-Instale o sudo:
+#### INSTALANDO SUDO ####
 # Debian / Ubuntu
-apt-get install sudo
+$ apt-get install sudo
 
 # CentOS
- yum install sudo
+$ yum install sudo
 
-# EDITE
+#### EDITE SUDOERS ####
 Edite o arquivo /etc/sudoers colocando os seguintes parametros na linha abaixo da permissão de ROOT:
 
 www-data ALL = NOPASSWD : /var/spool/asterisk/outgoing
@@ -53,21 +69,17 @@ TIMEOUT DE ESCRITA
 
 writetimeout = 5000
 
-# CONFIGURANDO O ACESSO
-E adicione as credenciais no arquivo " config.php "
+#### CONFIGURANDO O ACESSO ####
+E adicione as credenciais no arquivo "config.php "
 
-
-Por fim, Dê permissão de root para o diretorio modens para que possa executar todas as funções.
+#### Finalizando ####
+Dê permissão de root para o diretorio modens para que possa executar todas as funções.
 
 # Debian 7
-chmod -R 0777 /var/www/dongle
+$ chmod -R 0777 /var/www/dongle
 
 # Debian 8 ou CentOS
-chmod -R 0777 /var/www/html/dongle
+$ chmod -R 0777 /var/www/html/dongle
 
-
-# FIM
-
-Pronto! Só rodar no Browser.
-
-# http://IP_do_seu_servidor/dongle/
+#### ACESSO ####
+##### http://IP_do_seu_servidor/dongle/
