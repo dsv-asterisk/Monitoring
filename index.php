@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Painel Gerenciador de Dongles">
-    <meta name="author" content="Israel Azevedo">
+    <meta name="author" content="Israel Azevedo - Rebuild por Renato Siqueira">
 
     <title>Gerenciador Dongles</title>
 
@@ -15,7 +15,7 @@
 
 <body>
 <div class="container  logo">
-    <img class="logo__posicao" src="img/logo-aztell.png" />
+    <img class="logo__posicao" src="img/logo.png" />
 </div>
 
 <noscript>

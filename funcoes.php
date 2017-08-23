@@ -26,7 +26,7 @@ if($asterisk_manager->connect($manager_host, $manager_user, $manager_pass)){
             
         case 'reiniciar_tempo':
             $DIR = __DIR__;     
-            shell_exec("echo 0 > $DIR/tempo/$modem.txt");
+            shell_exec("echo 0 > $DIR/tempo/".$modem.".txt");
             break;          
 
         case 'reset_modem':
