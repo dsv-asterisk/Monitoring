@@ -18,6 +18,7 @@
 - Pasta Img: Contém o logo da empresa
 - Pasta JS: Contém o js pré-concatenado-compilado e semi-minificado.
 - Pasta Original: Contém o arquivo original desenvolvido pelo Israel
+- Pasta PhpAgi: Contém o arquivo [phpagi_asmanager.php](http://phpagi.sourceforge.net)
 - Pasta Resource: Contém os arquivos originais do font-awesome
 - Pasta Source: 
   - JS: Contém todos os arquivos originais utilizados.
