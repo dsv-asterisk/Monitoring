@@ -11,7 +11,8 @@
 
 ### Instalação ###
 - Descompactar o arquivo .zip dentro do diretório /var/www/ 
-- $ unzip Monitoring-master.zip -d dongle
+- $ unzip Monitoring-master.zip
+- Sugestão: renomear a pasta Monitoring-master para dongle
 
 ### Detalhamento ###
 - Pasta CSS: Contém o css pré-concatenado-compilado e semi-minificado.
@@ -33,7 +34,7 @@
 
 #### CASO DEBIAN 8 ou CENTOS NO DIRETÓRIO #####
 - $ cd /var/www/html/
-- $ unzip Monitoring-master.zip -d dongle
+- $ unzip Monitoring-master.zip
 
 ##### DEBIAN 7 
 - $ cd /var/www/dongle
