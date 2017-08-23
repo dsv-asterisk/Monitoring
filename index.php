@@ -36,7 +36,15 @@
         </div>    
     </div>
 
-    <div class="borda  central" id="results"></div>
+    <div class="borda  central" id="results">
+        <div class="container  alerta-noscript">
+            <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Aguarde..</h4>
+            <hr>
+            <p class="mb-0"><i class="fa fa-spinner fa-spin"></i> Compilando Informações.</p>
+            </div>        
+        </div>    
+    </div>
 
     <div class="footer">
         <hr></hr>

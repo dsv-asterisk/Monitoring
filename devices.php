@@ -153,7 +153,6 @@ class estadoModem{
 
                         foreach (explode("\n", $concise['data']) as $concise_item) {
                                 if (
-                                        preg_match("/$modem_nome/i", $concise_item) && preg_match("/!Dialing!/i", $concise_item) OR
                                         preg_match("/$modem_nome/i", $concise_item) && preg_match("/!Up!/i", $concise_item) && preg_match("/!Dial!/i", $concise_item)
                                         ) {
                                         
